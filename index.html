@@ -9,11 +9,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
+            /* Cores base */
             --ton-green: #00D700;
             --ton-dark: #121214;
             --ton-gray: #f4f4f5;
             --text-dark: #202024;
             --text-light: #ffffff;
+            
+            /* Cor exata do fundo da imagem do banner para dar fusão perfeita */
+            --banner-bg-color: #5de277; 
+
             --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             --card-radius: 15px;
         }
@@ -69,22 +74,31 @@
             opacity: 0.9;
         }
 
-        /* Hero Section */
+        /* --- HERO SECTION (BANNER) CORRIGIDO --- */
         .hero {
+            /* Fundo sólido com a cor exata da imagem */
+            background-color: var(--banner-bg-color); 
+            
+            /* Imagem posicionada na direita, com tamanho contido */
             background-image: url('tabs-renda-ton.png'); 
-            background-color: var(--ton-green); 
-            background-size: cover;
-            background-position: center right; 
+            background-size: contain; /* Contain garante que a imagem não corte nem estique demais */
+            background-position: right center; /* Gruda a imagem na direita */
             background-repeat: no-repeat;
-            padding: 100px 5% 100px 12%; 
+            
+            /* Espaçamento interno */
+            padding: 80px 5% 80px 10%; 
             display: flex;
             align-items: center;
-            min-height: 550px;
+            min-height: 500px;
+            position: relative; /* Para colocar pseudo-elementos se precisar */
         }
 
         .hero-content {
-            max-width: 550px;
+            /* Limita a largura do texto para ele nunca encostar na imagem */
+            max-width: 500px; 
             z-index: 2;
+            /* Adiciona um fundinho sutil só em telas que a imagem encostar muito */
+            background: transparent; 
         }
 
         .hero h1 {
@@ -101,15 +115,16 @@
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 40px;
             color: #000000; 
             font-weight: 600; 
+            line-height: 1.5;
         }
 
         .btn-main {
             display: inline-block;
-            background-color: var(--ton-green); 
+            background-color: var(--ton-green); /* Botão Verde novamente */
             color: var(--ton-dark); 
             padding: 15px 40px;
             font-size: 1.2rem;
@@ -223,7 +238,6 @@
             position: relative;
         }
 
-        /* TRUQUE CSS PARA REMOVER O FUNDO CLARO DAS FOTOS */
         .image-container img {
             max-width: 100%;
             max-height: 100%;
@@ -327,9 +341,75 @@
             transform: scale(1.02);
         }
 
+        /* --- VÍDEO PROMOCIONAL --- */
+        .video-section {
+            background-color: white;
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        .video-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--ton-dark);
+        }
+
+        .video-section p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .video-container {
+            max-width: 600px; 
+            margin: 0 auto;
+            border-radius: var(--card-radius);
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            background-color: #000;
+            margin-bottom: 40px;
+        }
+
+        .video-container video {
+            width: 100%;
+            display: block;
+            border-radius: var(--card-radius);
+        }
+
+        .btn-video {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: #25d366; 
+            color: #ffffff;
+            padding: 18px 40px;
+            font-size: 1.3rem;
+            font-weight: 800;
+            text-decoration: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-video:hover {
+            transform: translateY(-3px);
+            background-color: #20b858;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-video svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
         /* --- SEÇÃO DE LOCALIZAÇÃO E CONTATO --- */
         .location-section {
-            background-color: white;
+            background-color: var(--ton-gray); 
             padding: 80px 5%;
         }
 
@@ -500,19 +580,26 @@
         /* Adaptações Mobile (Celular) */
         @media (max-width: 768px) {
             .hero { 
-                background-position: 70% center; 
+                /* No celular, vamos remover a imagem para o texto ter 100% de foco, ou colocá-la bem no canto */
+                background-position: right center; 
+                background-size: cover; /* Faz a imagem cobrir o espaço no mobile */
                 justify-content: center;
                 padding: 60px 20px; 
             }
             .hero-content {
-                background: rgba(255, 255, 255, 0.7); 
+                /* Adiciona um fundo mais opaco no celular para garantir que o texto não se misture com a foto */
+                background: rgba(255, 255, 255, 0.85); 
                 padding: 30px;
                 border-radius: 15px;
                 text-align: center;
                 backdrop-filter: blur(5px);
             }
             .hero h1 { font-size: 2.2rem; }
+            /* Se o fundo no celular for claro, a palavra branca no H1 precisa ficar preta ou verde */
+            .hero h1 span { color: var(--ton-green); text-shadow: none; } 
+            
             .machines-section h2 { font-size: 2rem; }
+            .video-section h2 { font-size: 2rem; }
             
             .location-container {
                 flex-direction: column;
@@ -658,6 +745,24 @@
             </div>
 
         </div>
+    </section>
+
+    <section class="video-section">
+        <h2>Entenda as Vantagens do Ton</h2>
+        <p>Aperte o play e veja por que milhares de empreendedores estão escolhendo a Ton para alavancar suas vendas sem pagar aluguel.</p>
+        
+        <div class="video-container">
+            <video controls>
+                <source src="imagens/video-flavia.mp4" type="video/mp4">
+                <source src="imagens/video-flavia.mov" type="video/quicktime">
+                Seu navegador não suporta a reprodução deste vídeo.
+            </video>
+        </div>
+
+        <a href="https://wa.me/5566997194634?text=Olá%20Flávia!%20Vi%20seu%20vídeo%20no%20site%20e%20gostaria%20de%20tirar%20umas%20dúvidas." class="btn-video" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157.1zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+            Falar com a Flávia
+        </a>
     </section>
 
     <section class="location-section" id="contato">
