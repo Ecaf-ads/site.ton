@@ -9,16 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* Cores base */
             --ton-green: #00D700;
             --ton-dark: #121214;
             --ton-gray: #f4f4f5;
             --text-dark: #202024;
             --text-light: #ffffff;
-            
-            /* Cor exata do fundo da imagem do banner para dar fusão perfeita */
             --banner-bg-color: #5de277; 
-
             --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             --card-radius: 15px;
         }
@@ -74,30 +70,23 @@
             opacity: 0.9;
         }
 
-        /* --- HERO SECTION (BANNER) CORRIGIDO --- */
+        /* Hero Section */
         .hero {
-            /* Fundo sólido com a cor exata da imagem */
             background-color: var(--banner-bg-color); 
-            
-            /* Imagem posicionada na direita, com tamanho contido */
-            background-image: url('tabs-renda-ton.png'); 
-            background-size: contain; /* Contain garante que a imagem não corte nem estique demais */
-            background-position: right center; /* Gruda a imagem na direita */
+            background-image: url('imagens/tabs-renda-ton.png'); 
+            background-size: contain; 
+            background-position: right center; 
             background-repeat: no-repeat;
-            
-            /* Espaçamento interno */
             padding: 80px 5% 80px 10%; 
             display: flex;
             align-items: center;
             min-height: 500px;
-            position: relative; /* Para colocar pseudo-elementos se precisar */
+            position: relative;
         }
 
         .hero-content {
-            /* Limita a largura do texto para ele nunca encostar na imagem */
             max-width: 500px; 
             z-index: 2;
-            /* Adiciona um fundinho sutil só em telas que a imagem encostar muito */
             background: transparent; 
         }
 
@@ -124,7 +113,7 @@
 
         .btn-main {
             display: inline-block;
-            background-color: var(--ton-green); /* Botão Verde novamente */
+            background-color: var(--ton-green); 
             color: var(--ton-dark); 
             padding: 15px 40px;
             font-size: 1.2rem;
@@ -341,7 +330,7 @@
             transform: scale(1.02);
         }
 
-        /* --- VÍDEO PROMOCIONAL --- */
+        /* --- VÍDEO PROMOCIONAL (ADAPTADO PARA YOUTUBE) --- */
         .video-section {
             background-color: white;
             padding: 80px 5%;
@@ -363,20 +352,30 @@
             margin-right: auto;
         }
 
-        .video-container {
-            max-width: 600px; 
-            margin: 0 auto;
+        /* Container do YouTube para deixar o iframe responsivo */
+        .video-wrapper {
+            max-width: 600px;
+            margin: 0 auto 40px auto;
             border-radius: var(--card-radius);
             overflow: hidden;
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
             background-color: #000;
-            margin-bottom: 40px;
         }
 
-        .video-container video {
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Proporção 16:9 do YouTube */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            display: block;
-            border-radius: var(--card-radius);
+            height: 100%;
+            border: 0;
         }
 
         .btn-video {
@@ -580,14 +579,12 @@
         /* Adaptações Mobile (Celular) */
         @media (max-width: 768px) {
             .hero { 
-                /* No celular, vamos remover a imagem para o texto ter 100% de foco, ou colocá-la bem no canto */
                 background-position: right center; 
-                background-size: cover; /* Faz a imagem cobrir o espaço no mobile */
+                background-size: cover; 
                 justify-content: center;
                 padding: 60px 20px; 
             }
             .hero-content {
-                /* Adiciona um fundo mais opaco no celular para garantir que o texto não se misture com a foto */
                 background: rgba(255, 255, 255, 0.85); 
                 padding: 30px;
                 border-radius: 15px;
@@ -595,7 +592,6 @@
                 backdrop-filter: blur(5px);
             }
             .hero h1 { font-size: 2.2rem; }
-            /* Se o fundo no celular for claro, a palavra branca no H1 precisa ficar preta ou verde */
             .hero h1 span { color: var(--ton-green); text-shadow: none; } 
             
             .machines-section h2 { font-size: 2rem; }
@@ -665,7 +661,7 @@
 
             <div class="machine-card">
                 <div class="image-container">
-                    <img src="T3 Smart Max.png" alt="Ton T3 Smart Max">
+                    <img src="imagens/T3 Smart Max.png" alt="Ton T3 Smart Max">
                 </div>
                 <h1 class="machine-title">T3 Smart <span>Max</span></h1>
                 <p class="machine-description">A maquininha Android, mais rápida e melhor bateria</p>
@@ -687,7 +683,7 @@
 
             <div class="machine-card">
                 <div class="image-container">
-                    <img src="T3 Smart.png" alt="Ton T3 Max">
+                    <img src="imagens/T3 Smart.png" alt="Ton T3 Max">
                 </div>
                 <h1 class="machine-title">T3 <span>Max</span></h1>
                 <p class="machine-description">A maquininha com comprovante impresso</p>
@@ -707,7 +703,7 @@
 
             <div class="machine-card">
                 <div class="image-container">
-                    <img src="T2 Max.png" alt="Ton T2 Max">
+                    <img src="imagens/T2 Max.png" alt="Ton T2 Max">
                 </div>
                 <h1 class="machine-title">T2 <span>Max</span></h1>
                 <p class="machine-description">A maquininha compacta que tá sempre com você</p>
@@ -727,7 +723,7 @@
 
             <div class="machine-card">
                 <div class="image-container">
-                    <img src="T1 Max.png" alt="Ton T1 Max">
+                    <img src="imagens/T1 Max.png" alt="Ton T1 Max">
                 </div>
                 <h1 class="machine-title">T1 <span>Max</span></h1>
                 <p class="machine-description">A maquininha compacta que conecta com o seu celular</p>
@@ -751,12 +747,14 @@
         <h2>Entenda as Vantagens do Ton</h2>
         <p>Aperte o play e veja por que milhares de empreendedores estão escolhendo a Ton para alavancar suas vendas sem pagar aluguel.</p>
         
-        <div class="video-container">
-            <video controls>
-                <source src="imagens/video-flavia.mp4" type="video/mp4">
-                <source src="imagens/video-flavia.mov" type="video/quicktime">
-                Seu navegador não suporta a reprodução deste vídeo.
-            </video>
+        <div class="video-wrapper">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/watch?v=fflz0fAKloU" 
+                        title="Vantagens da Ton Max" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                </iframe>
+            </div>
         </div>
 
         <a href="https://wa.me/5566997194634?text=Olá%20Flávia!%20Vi%20seu%20vídeo%20no%20site%20e%20gostaria%20de%20tirar%20umas%20dúvidas." class="btn-video" target="_blank">
