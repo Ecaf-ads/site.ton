@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parceiro Ton Mega+ Sinop MT | Maquininhas Flávia</title>
+    <title>Parceiro Ton Sinop MT | Maquininhas Flávia</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --ton-green: #00D700;
-            --ton-dark-green: #00a800; /* Novo tom de verde mais escuro para destaque */
+            --ton-dark-green: #00a800;
             --ton-dark: #121214;
             --ton-gray: #f4f4f5;
             --text-dark: #202024;
@@ -71,25 +71,25 @@
             opacity: 0.9;
         }
 
-        /* --- HERO SECTION (BANNER) REAJUSTADO PARA A FOTO FICAR MUITO MAIOR --- */
+        /* --- HERO SECTION (BANNER) - IMAGEM MUITO MAIOR --- */
         .hero {
             background-color: var(--banner-bg-color); 
-            background-image: url('imagens/tabs-renda-ton.png'); 
-            background-size: contain; /* Contain preenche a altura sem cortar */
-            background-position: right center; /* Ancorado na direita e centralizado verticalmente */
+            background-image: url('tabs-renda-ton.png'); 
+            /* Mudamos para 65% para a imagem ocupar bem mais espaço na direita */
+            background-size: 65%; 
+            background-position: right bottom; 
             background-repeat: no-repeat;
-            padding: 100px 5% 100px 10%; /* Aumentado padding top e bottom para crescer a foto */
+            padding: 120px 5% 120px 5%; 
             display: flex;
             align-items: center;
-            min-height: 600px; /* Aumentado min-height para a foto ficar muito maior */
+            min-height: 600px; 
             position: relative;
         }
 
         .hero-content {
-            max-width: 450px; /* Texto contido nos 45% da esquerda */
+            max-width: 50%; /* Mais espaço para o texto respirar ao lado da imagem grande */
             z-index: 2;
             background: transparent; 
-            padding-left: 5%;
         }
 
         .hero h1 {
@@ -141,7 +141,7 @@
 
         /* --- SEÇÃO DE CUPOM DE DESCONTO --- */
         .coupon-section {
-            background-color: #05881a; /* Verde escuro do banner de cupom */
+            background-color: #05881a; 
             padding: 40px 5%;
             text-align: center;
             color: white;
@@ -394,7 +394,7 @@
 
         .btn-order {
             display: block;
-            background-color: var(--ton-green); /* Botão Verde para destacar mais e ficar com cara da Ton */
+            background-color: var(--ton-green); 
             color: var(--ton-dark);
             padding: 16px;
             text-decoration: none;
@@ -441,7 +441,6 @@
             background-color: #000;
         }
 
-        /* Container de vídeo local simplificado */
         .video-container video {
             width: 100%;
             display: block;
@@ -649,15 +648,15 @@
         /* Adaptações Mobile (Celular) */
         @media (max-width: 768px) {
             .hero { 
-                background-position: right center; 
-                background-size: cover; 
-                justify-content: center;
-                padding: 60px 20px; 
+                background-position: right bottom; 
+                background-size: 100%; /* Faz a foto pegar toda a largura no celular */
+                align-items: flex-start; /* Sobe o texto no celular */
+                padding: 50px 20px 280px 20px; /* Abre espaço embaixo para mostrar a imagem */
             }
             .hero-content {
                 max-width: 100%;
                 padding-left: 0;
-                background: rgba(255, 255, 255, 0.85); 
+                background: rgba(255, 255, 255, 0.9); 
                 padding: 30px;
                 border-radius: 15px;
                 text-align: center;
@@ -684,11 +683,6 @@
             .btn-cookie {
                 width: 100%;
             }
-            
-            .whatsapp-float {
-                bottom: 20px;
-                right: 20px;
-            }
         }
     </style>
 </head>
@@ -712,7 +706,7 @@
             <span>🎁 Ganhe</span>
             <span class="coupon-badge">10% OFF</span>
         </div>
-        <p class="coupon-text"><strong>Parceiro Renda Ton Mega+.</strong> Desconto exclusivo aplicado automaticamente no carrinho ao usar nosso link.</p>
+        <p class="coupon-text"><strong>Parceiro Renda Ton.</strong> Desconto exclusivo aplicado automaticamente no carrinho ao usar nosso link.</p>
         
         <div class="coupon-box">
             <div class="coupon-code" id="cupomCode">APTEC10</div>
@@ -749,7 +743,7 @@
 
             <div class="machine-card">
                 <div class="image-container">
-                    <img src="imagens/t3smart_img.png" alt="Ton T3 Smart Mega+">
+                    <img src="T3 Smart Max.png" alt="Ton T3 Smart Mega+">
                 </div>
                 <h1 class="machine-title">T3 Smart <span>Mega+</span></h1>
                 <p class="machine-description">A maquininha Android com as melhores taxas do mercado.</p>
@@ -767,7 +761,7 @@
 
             <div class="machine-card">
                 <div class="image-container">
-                    <img src="imagens/t3_img.png" alt="Ton T3 Mega+">
+                    <img src="T3 Smart.png" alt="Ton T3 Mega+">
                 </div>
                 <h1 class="machine-title">T3 <span>Mega+</span></h1>
                 <p class="machine-description">A clássica que imprime comprovante com taxas baixas.</p>
@@ -783,7 +777,7 @@
 
             <div class="machine-card">
                 <div class="image-container">
-                    <img src="imagens/t2plus_img.png" alt="Ton T2+ Mega+">
+                    <img src="T2 Max.png" alt="Ton T2+ Mega+">
                 </div>
                 <h1 class="machine-title">T2+ <span>Mega+</span></h1>
                 <p class="machine-description">A maquininha compacta que tá sempre com você.</p>
@@ -799,7 +793,7 @@
 
             <div class="machine-card">
                 <div class="image-container">
-                    <img src="imagens/t1plus_img.png" alt="Ton T1+ Mega+">
+                    <img src="T1 Max.png" alt="Ton T1+ Mega+">
                 </div>
                 <h1 class="machine-title">T1+ <span>Mega+</span></h1>
                 <p class="machine-description">A maquininha de entrada que conecta com o seu celular.</p>
@@ -822,7 +816,7 @@
         <div class="video-wrapper">
             <div class="video-container" style="padding-bottom: 0; height: auto;">
                 <video controls>
-                    <source src="imagens/Ton video.mp4" type="video/mp4">
+                    <source src="Ton video.mp4" type="video/mp4">
                     Seu navegador não suporta a reprodução deste vídeo.
                 </video>
             </div>
@@ -876,7 +870,7 @@
     <footer>
         <p>Aviso legal: Este é um site de um Parceiro Renda Ton Mega+ Sinop MT operado por Flávia Xavier. Atuamos de forma independente. Todas as transações, suporte e entregas são de responsabilidade oficial da Ton. Ao clicar nos botões, você será redirecionado ao site oficial com o desconto exclusivo aplicado.</p>
         <div class="copyright">
-            <p>© 2026 Parceiro Ton Mega+ Sinop MT. Todos os direitos reservados.</p>
+            <p>© 2026 Parceiro Ton Sinop MT. Todos os direitos reservados.</p>
         </div>
     </footer>
 
