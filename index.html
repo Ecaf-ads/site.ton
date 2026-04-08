@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parceiro Ton Max | Ofertas Exclusivas e Melhores Taxas</title>
+    <title>Parceiro Ton Mega+ | Ofertas Exclusivas e Melhores Taxas</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --ton-green: #00D700;
+            --ton-dark-green: #00a800; /* Novo tom de verde mais escuro para destaque */
             --ton-dark: #121214;
             --ton-gray: #f4f4f5;
             --text-dark: #202024;
@@ -74,10 +75,10 @@
         .hero {
             background-color: var(--banner-bg-color); 
             background-image: url('tabs-renda-ton.png'); 
-            background-size: contain; 
-            background-position: right center; 
+            background-size: 50%; 
+            background-position: right bottom; 
             background-repeat: no-repeat;
-            padding: 80px 5% 80px 10%; 
+            padding: 80px 5%; 
             display: flex;
             align-items: center;
             min-height: 500px;
@@ -85,9 +86,10 @@
         }
 
         .hero-content {
-            max-width: 500px; 
+            max-width: 45%; 
             z-index: 2;
             background: transparent; 
+            padding-left: 5%;
         }
 
         .hero h1 {
@@ -135,6 +137,84 @@
             0% { transform: scale(1); }
             50% { transform: scale(1.03); }
             100% { transform: scale(1); }
+        }
+
+        /* --- NOVA SEÇÃO DE CUPOM --- */
+        .coupon-section {
+            background-color: #05881a; /* Verde escuro do banner de cupom */
+            padding: 40px 5%;
+            text-align: center;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .coupon-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .coupon-badge {
+            background-color: white;
+            color: #05881a;
+            padding: 5px 15px;
+            border-radius: 8px;
+            font-size: 1.5rem;
+        }
+
+        .coupon-text {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            max-width: 800px;
+            background-color: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .coupon-box {
+            background-color: white;
+            border-radius: var(--card-radius);
+            padding: 30px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .coupon-code {
+            border: 2px dashed #00D700;
+            background-color: #f0fff0;
+            color: #121214;
+            font-size: 2rem;
+            font-weight: 800;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .btn-coupon {
+            display: block;
+            background-color: #00D700;
+            color: #121214;
+            padding: 15px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .btn-coupon:hover {
+            background-color: #00b300;
+            transform: translateY(-2px);
         }
 
         /* Benefícios Gerais */
@@ -314,23 +394,23 @@
 
         .btn-order {
             display: block;
-            background-color: var(--ton-dark);
-            color: var(--text-light);
+            background-color: var(--ton-green); /* Botão Verde para destacar mais */
+            color: var(--ton-dark);
             padding: 16px;
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 800;
             font-size: 1.1rem;
             border-radius: 8px;
             transition: background-color 0.3s, transform 0.3s;
         }
 
         .btn-order:hover {
-            background-color: var(--ton-green);
-            color: var(--ton-dark);
+            background-color: var(--ton-dark-green);
+            color: var(--text-light);
             transform: scale(1.02);
         }
 
-        /* --- VÍDEO PROMOCIONAL (ADAPTADO PARA YOUTUBE) --- */
+        /* --- VÍDEO PROMOCIONAL --- */
         .video-section {
             background-color: white;
             padding: 80px 5%;
@@ -352,7 +432,6 @@
             margin-right: auto;
         }
 
-        /* Container do YouTube para deixar o iframe responsivo */
         .video-wrapper {
             max-width: 600px;
             margin: 0 auto 40px auto;
@@ -362,20 +441,11 @@
             background-color: #000;
         }
 
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; /* Proporção 16:9 do YouTube */
-            height: 0;
-            overflow: hidden;
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
+        /* Container de vídeo local simplificado */
+        .video-container video {
             width: 100%;
-            height: 100%;
-            border: 0;
+            display: block;
+            border-radius: var(--card-radius);
         }
 
         .btn-video {
@@ -585,6 +655,8 @@
                 padding: 60px 20px; 
             }
             .hero-content {
+                max-width: 100%;
+                padding-left: 0;
                 background: rgba(255, 255, 255, 0.85); 
                 padding: 30px;
                 border-radius: 15px;
@@ -623,20 +695,35 @@
 <body>
 
     <header>
-        <a href="#" class="logo">Ton Max<span> Parceiro</span></a>
+        <a href="#" class="logo">Ton Mega+<span> Parceiro</span></a>
         <a href="https://wa.me/5566997194634?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20as%20maquininhas." class="btn-header" target="_blank">Fale Conosco</a>
     </header>
 
     <section class="hero">
         <div class="hero-content">
             <h1>Escolha a sua <span>maquininha</span></h1>
-            <p>As melhores taxas do Ton Max para o seu negócio vender mais, sem aluguel e com garantia vitalícia. Garanta seu desconto exclusivo!</p>
-            <a href="https://www.ton.com.br/catalogo?coupon=FLAVIANAXAVIERVC&userAnticipation=0&utm_medium=invite_share&utm_source=revendedor" class="btn-main" target="_blank">Garantir Meu Desconto Exclusivo</a>
+            <p>As melhores taxas do Ton Mega+ para o seu negócio vender mais, sem aluguel e com garantia vitalícia. Garanta seu desconto exclusivo!</p>
+            <a href="#cupom" class="btn-main">Garantir Meu Desconto Exclusivo</a>
+        </div>
+    </section>
+
+    <section class="coupon-section" id="cupom">
+        <div class="coupon-header">
+            <span>🎁 Ganhe</span>
+            <span class="coupon-badge">10% OFF</span>
+        </div>
+        <p class="coupon-text"><strong>Parceiro Ton.</strong> Desconto exclusivo aplicado no carrinho. Continue aqui ou acesse o site oficial copiando o cupom abaixo.</p>
+        
+        <div class="coupon-box">
+            <div class="coupon-code" id="cupomCode">APTEC10</div>
+            <a href="https://www.ton.com.br/catalogo?coupon=FLAVIANAXAVIERVC&userAnticipation=0&utm_medium=invite_share&utm_source=revendedor" class="btn-coupon" target="_blank" onclick="copiarCupom()">
+                🎯 Copiar Cupom e Ir para o Site
+            </a>
         </div>
     </section>
 
     <section class="general-benefits">
-        <h2>Vantagens de ser Parceiro Ton Max</h2>
+        <h2>Vantagens de ser Parceiro Ton Mega+</h2>
         <div class="benefits-grid">
             <div class="benefit-card">
                 <div class="benefit-icon">🚫</div>
@@ -661,9 +748,9 @@
 
             <div class="machine-card">
                 <div class="image-container">
-                    <img src="T3 Smart Max.png" alt="Ton T3 Smart Max">
+                    <img src="T3 Smart Max.png" alt="Ton T3 Smart Mega+">
                 </div>
-                <h1 class="machine-title">T3 Smart <span>Max</span></h1>
+                <h1 class="machine-title">T3 Smart <span>Mega+</span></h1>
                 <p class="machine-description">A maquininha Android, mais rápida e melhor bateria</p>
                 <ul class="feature-list">
                     <li class="feature-item chip">Com Chip 4G e Wi-Fi</li>
@@ -674,18 +761,14 @@
                     <li class="feature-item android">Sistema Android com Visor Touchscreen</li>
                     <li class="feature-item shield">Garantia vitalícia</li>
                 </ul>
-                <div class="offer-box">
-                    <p class="offer-link-text">Compre com desconto pelo link:</p>
-                    <a href="https://www.ton.com.br/catalogo?coupon=FLAVIANAXAVIERVC&userAnticipation=0&utm_medium=invite_share&utm_source=revendedor" class="offer-link" target="_blank">Garantir Oferta</a>
-                </div>
-                <a href="https://www.ton.com.br/catalogo?coupon=FLAVIANAXAVIERVC&userAnticipation=0&utm_medium=invite_share&utm_source=revendedor" class="btn-order" target="_blank">Pedir T3 Smart Max</a>
+                <a href="https://www.ton.com.br/catalogo?coupon=FLAVIANAXAVIERVC&userAnticipation=0&utm_medium=invite_share&utm_source=revendedor" class="btn-order" target="_blank">Pedir T3 Smart Mega+</a>
             </div>
 
             <div class="machine-card">
                 <div class="image-container">
-                    <img src="T3 Smart.png" alt="Ton T3 Max">
+                    <img src="T3 Smart.png" alt="Ton T3 Mega+">
                 </div>
-                <h1 class="machine-title">T3 <span>Max</span></h1>
+                <h1 class="machine-title">T3 <span>Mega+</span></h1>
                 <p class="machine-description">A maquininha com comprovante impresso</p>
                 <ul class="feature-list">
                     <li class="feature-item chip">Com Chip 3G e Wi-Fi</li>
@@ -694,18 +777,14 @@
                     <li class="feature-item pix">Aceite Pix na Maquininha</li>
                     <li class="feature-item shield">Garantia vitalícia</li>
                 </ul>
-                <div class="offer-box">
-                    <p class="offer-link-text">Compre com desconto pelo link:</p>
-                    <a href="https://www.ton.com.br/catalogo?coupon=FLAVIANAXAVIERVC&userAnticipation=0&utm_medium=invite_share&utm_source=revendedor" class="offer-link" target="_blank">Garantir Oferta</a>
-                </div>
-                <a href="https://www.ton.com.br/catalogo?coupon=FLAVIANAXAVIERVC&userAnticipation=0&utm_medium=invite_share&utm_source=revendedor" class="btn-order" target="_blank">Pedir T3 Max</a>
+                <a href="https://www.ton.com.br/catalogo?coupon=FLAVIANAXAVIERVC&userAnticipation=0&utm_medium=invite_share&utm_source=revendedor" class="btn-order" target="_blank">Pedir T3 Mega+</a>
             </div>
 
             <div class="machine-card">
                 <div class="image-container">
-                    <img src="T2 Max.png" alt="Ton T2 Max">
+                    <img src="T2 Max.png" alt="Ton T2 Mega+">
                 </div>
-                <h1 class="machine-title">T2 <span>Max</span></h1>
+                <h1 class="machine-title">T2 <span>Mega+</span></h1>
                 <p class="machine-description">A maquininha compacta que tá sempre com você</p>
                 <ul class="feature-list">
                     <li class="feature-item chip">Com Chip 3G e Wi-Fi</li>
@@ -714,18 +793,14 @@
                     <li class="feature-item pix">Aceite Pix na Maquininha</li>
                     <li class="feature-item shield">Garantia vitalícia</li>
                 </ul>
-                <div class="offer-box">
-                    <p class="offer-link-text">Compre com desconto pelo link:</p>
-                    <a href="https://www.ton.com.br/catalogo?coupon=FLAVIANAXAVIERVC&userAnticipation=0&utm_medium=invite_share&utm_source=revendedor" class="offer-link" target="_blank">Garantir Oferta</a>
-                </div>
-                <a href="https://www.ton.com.br/catalogo?coupon=FLAVIANAXAVIERVC&userAnticipation=0&utm_medium=invite_share&utm_source=revendedor" class="btn-order" target="_blank">Pedir T2 Max</a>
+                <a href="https://www.ton.com.br/catalogo?coupon=FLAVIANAXAVIERVC&userAnticipation=0&utm_medium=invite_share&utm_source=revendedor" class="btn-order" target="_blank">Pedir T2 Mega+</a>
             </div>
 
             <div class="machine-card">
                 <div class="image-container">
-                    <img src="T1 Max.png" alt="Ton T1 Max">
+                    <img src="T1 Max.png" alt="Ton T1 Mega+">
                 </div>
-                <h1 class="machine-title">T1 <span>Max</span></h1>
+                <h1 class="machine-title">T1 <span>Mega+</span></h1>
                 <p class="machine-description">A maquininha compacta que conecta com o seu celular</p>
                 <ul class="feature-list">
                     <li class="feature-item celular">Precisa de celular com internet</li>
@@ -733,11 +808,7 @@
                     <li class="feature-item comprovante">Comprovante por SMS</li>
                     <li class="feature-item shield">Garantia vitalícia</li>
                 </ul>
-                <div class="offer-box">
-                    <p class="offer-link-text">Compre com desconto pelo link:</p>
-                    <a href="https://www.ton.com.br/catalogo?coupon=FLAVIANAXAVIERVC&userAnticipation=0&utm_medium=invite_share&utm_source=revendedor" class="offer-link" target="_blank">Garantir Oferta</a>
-                </div>
-                <a href="https://www.ton.com.br/catalogo?coupon=FLAVIANAXAVIERVC&userAnticipation=0&utm_medium=invite_share&utm_source=revendedor" class="btn-order" target="_blank">Pedir T1 Max</a>
+                <a href="https://www.ton.com.br/catalogo?coupon=FLAVIANAXAVIERVC&userAnticipation=0&utm_medium=invite_share&utm_source=revendedor" class="btn-order" target="_blank">Pedir T1 Mega+</a>
             </div>
 
         </div>
@@ -748,12 +819,11 @@
         <p>Aperte o play e veja por que milhares de empreendedores estão escolhendo a Ton para alavancar suas vendas sem pagar aluguel.</p>
         
         <div class="video-wrapper">
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/fflz0fAKloU" 
-                        title="Vantagens da Ton Max" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        allowfullscreen>
-                </iframe>
+            <div class="video-container" style="padding-bottom: 0; height: auto;">
+                <video controls>
+                    <source src="Ton video.mp4" type="video/mp4">
+                    Seu navegador não suporta a reprodução deste vídeo.
+                </video>
             </div>
         </div>
 
@@ -767,7 +837,7 @@
         <h2>Visite Nossa Loja</h2>
         <div class="location-container">
             <div class="map-box">
-                <iframe src="https://maps.google.com/maps?q=Loja%20Ton%20Sinop,%20Av.%20dos%20Jacarand%C3%A1s,%201269&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
+                <iframe src="https://maps.google.com/maps?q=Av.%20dos%20Jacarand%C3%A1s,%201269%20-%20Jardim%20Jacarandas,%20Sinop%20-%20MT&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
             </div>
             <div class="info-box">
                 <h3>Informações de Contato</h3>
@@ -775,7 +845,7 @@
                     <div class="info-icon">📍</div>
                     <div>
                         <strong>Endereço:</strong>
-                        <a href="https://www.google.com/maps/search/?api=1&query=Loja+Ton+Sinop" target="_blank" style="color: inherit; text-decoration: none;">
+                        <a href="https://maps.google.com/maps?q=Av.%20dos%20Jacarand%C3%A1s,%201269%20-%20Jardim%20Jacarandas,%20Sinop%20-%20MT" target="_blank" style="color: inherit; text-decoration: none;">
                             Av. dos Jacarandás, 1269 - Jardim Jacarandas<br>
                             Sinop - MT, 78557-667
                         </a>
@@ -803,9 +873,9 @@
     </section>
 
     <footer>
-        <p>Aviso legal: Este é um site de um Parceiro Renda Ton Max e atua de forma independente. Todas as transações, suporte e entregas são de responsabilidade oficial da Ton. Ao clicar nos botões, você será redirecionado ao site oficial com o desconto exclusivo de parceiro aplicado.</p>
+        <p>Aviso legal: Este é um site de um Parceiro Renda Ton Mega+ e atua de forma independente. Todas as transações, suporte e entregas são de responsabilidade oficial da Ton. Ao clicar nos botões, você será redirecionado ao site oficial com o desconto exclusivo de parceiro aplicado.</p>
         <div class="copyright">
-            <p>© 2026 Parceiro Ton Max. Todos os direitos reservados.</p>
+            <p>© 2026 Parceiro Ton Mega+. Todos os direitos reservados.</p>
         </div>
     </footer>
 
@@ -839,6 +909,16 @@
                 }, 400); 
             });
         });
+
+        // Script para copiar o cupom ao clicar no botão
+        function copiarCupom() {
+            const cupom = document.getElementById('cupomCode').innerText;
+            navigator.clipboard.writeText(cupom).then(() => {
+                alert('Cupom APTEC10 copiado com sucesso! Aproveite seu desconto.');
+            }).catch(err => {
+                console.error('Erro ao copiar o cupom: ', err);
+            });
+        }
     </script>
 </body>
 </html>
